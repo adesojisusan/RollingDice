@@ -20,7 +20,11 @@ class RollingDice extends StatelessWidget {
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.all(5.0),
-                    child: FlatButton(child: Image.asset('images/dice1.png')),
+                    child: FlatButton(
+                      onPressed: (){
+                    },
+                        child: Image.asset('images/dice1.png'),
+                    ),
                   ),
                 ),
                 Expanded(
