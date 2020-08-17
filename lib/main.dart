@@ -32,7 +32,11 @@ class _RollingDiceState extends State<RollingDice> {
                     padding: const EdgeInsets.all(5.0),
                     child: FlatButton(
                       onPressed: () {
-                        leftDiceNumber= Random().nextInt(6)+1;
+                        setState(() {
+                          leftDiceNumber= Random().nextInt(6)+1;
+                          rightDiceNumber= Random().nextInt(6)+1;
+                        });
+
                       },
                       child: Image.asset('images/dice$leftDiceNumber.png'),
                     ),
@@ -41,7 +45,15 @@ class _RollingDiceState extends State<RollingDice> {
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.all(5.0),
-                    child: FlatButton(child: Image.asset('images/dice1.png')),
+                    child: FlatButton(
+                        onPressed: (){
+                          setState(() {
+                            rightDiceNumber= Random().nextInt(6)+1;
+                            leftDiceNumber= Random().nextInt(6)+1;
+                          });
+
+                        },
+                        child: Image.asset('images/dice$rightDiceNumber.png')),
                   ),
                 ),
               ],
